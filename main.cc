@@ -439,6 +439,7 @@ void App::usage(const char *me) {
 	printf("  hide                   Hide configuration window\n");
 	printf("  disable                Disable easystroke\n");
 	printf("  enable                 Enable easystroke\n");
+	printf("  toggle                 Enable or disable easystroke\n");
 	printf("  about                  Show about dialog\n");
 	printf("  quit                   Quit easystroke\n");
 	printf("\n");
