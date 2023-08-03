@@ -1,4 +1,5 @@
 .settings
+*~
 *.o
 *.Po
 easystroke
