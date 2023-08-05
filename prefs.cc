@@ -210,7 +210,7 @@ public:
 	virtual void notify() {
 		if (a) {
 			char path[256] = "easystroke";
-			(void)readlink("/proc/self/exe", path, sizeof(path));
+			readlink("/proc/self/exe", path, sizeof(path));
 
 			FILE *file = fopen(filename.c_str(), "w");
 			if (!file || fprintf(file, desktop_file, path) == -1)

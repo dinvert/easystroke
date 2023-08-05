@@ -47,10 +47,15 @@ void Popup::invalidate(int x1, int y1, int x2, int y2) {
 
 Composite::Composite() {
 #define N 128
-	int w = gdk_screen_width();
-	int h = gdk_screen_height();
-	num_x = (gdk_screen_width()  - 1)/N + 1;
-	num_y = (gdk_screen_height() - 1)/N + 1;
+
+    GdkRectangle workarea = {0};
+    auto const monitor = gdk_display_get_primary_monitor(gdk_display_get_default());
+    gdk_monitor_get_workarea(monitor, &workarea);
+
+	const int w = workarea.width; // gdk_screen_width();
+	const int h = workarea.height; // gdk_screen_height();
+	num_x = (w - 1)/N + 1;
+	num_y = (h - 1)/N + 1;
 	pieces = new Popup**[num_x];
 	for (int i = 0; i < num_x; i++) {
 		pieces[i] = new Popup*[num_y];

@@ -298,7 +298,7 @@ void App::run_by_name(const char *str, const Glib::RefPtr<Gio::ApplicationComman
 		}
 	}
 	char *msg;
-	(void)asprintf(&msg, _("Warning: No action \"%s\" defined\n"), str);
+	asprintf(&msg, _("Warning: No action \"%s\" defined\n"), str);
 	cmd_line->print(msg);
 	free(msg);
 }
